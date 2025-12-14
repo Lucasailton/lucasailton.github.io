@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LiveComOsAmigos</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="logo.png" />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, #2dd4bf, #0f172a 65%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    header img {
+      width: 180px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 0 15px rgba(45,212,191,0.6));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    main {
+      width: 100%;
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.7);
+    }
+
+    .card h2 {
+      font-size: 1.9rem;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+      font-size: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      filter: brightness(1.15);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+
+    .youtube { background: #ef4444; }
+    .discord { background: #5865f2; }
+
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9rem;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      header img { width: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo LiveComOsAmigos" />
+    <h1>LiveComOsAmigos</h1>
+    <p>Lives, games e diversão com a galera 🎮🔥</p>
+  </header>
+
+  <main>
+    <section class="cards">
+      <div class="card">
+        <h2>YouTube</h2>
+        <p>Se inscreva no canal e acompanhe nossas lives e vídeos semanais.</p>
+        <a class="btn youtube" href="https://youtube.com/@livecomosamigos" target="_blank">Ir para o canal</a>
+      </div>
+
+      <div class="card">
+        <h2>Discord</h2>
+        <p>Entre no nosso Discord para jogar, conversar e ficar por dentro das novidades.</p>
+        <a class="btn discord" href="https://discord.gg/KftYJcwa" target="_blank">Entrar no Discord</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 • LiveComOsAmigos
+  </footer>
+
+</body>
+</html>
