@@ -6,7 +6,7 @@
   <title>LiveComOsAmigos</title>
 
   <!-- SEO -->
-  <meta name="description" content="LiveComOsAmigos - Lives AO VIVO, games e diversão com a galera no YouTube e Discord">
+  <meta name="description" content="LiveComOsAmigos - Lives, games e diversão com a galera">
 
   <!-- Favicon -->
   <link rel="icon" href="logo.png" />
@@ -22,56 +22,32 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      position: relative;
       overflow-x: hidden;
-    }
-
-    /* MARCA D'ÁGUA */
-    .watermark {
-      position: fixed;
-      bottom: 15px;
-      right: 20px;
-      font-size: 0.85rem;
-      opacity: 0.35;
-      pointer-events: none;
-      z-index: 9999;
-      letter-spacing: 0.5px;
     }
 
     header {
       text-align: center;
-      padding: 60px 20px 40px;
+      padding: 70px 20px 50px;
       animation: fadeIn 1.2s ease;
     }
 
     header img {
-      width: 180px;
+      width: 170px;
       margin-bottom: 20px;
       filter: drop-shadow(0 0 15px rgba(45,212,191,0.6));
       animation: float 4s ease-in-out infinite;
     }
 
     header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+      font-size: 2.6rem;
+      margin-bottom: 12px;
     }
 
     header p {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       opacity: 0.9;
-      margin-bottom: 15px;
-    }
-
-    .hero-btn {
-      margin-top: 10px;
-      font-size: 1.1rem;
-      padding: 16px 38px;
-    }
-
-    .social-proof {
-      margin-top: 20px;
-      font-size: 1rem;
-      opacity: 0.85;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     main {
@@ -80,30 +56,25 @@
       padding: 20px;
     }
 
-    /* VÍDEO */
-    .video-section {
-      margin-top: 40px;
+    /* DESTAQUE COMUNIDADE */
+    .community {
+      background: rgba(15, 23, 42, 0.75);
+      border-radius: 22px;
+      padding: 40px 30px;
       text-align: center;
+      margin-bottom: 50px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     }
 
-    .video-section h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
+    .community h2 {
+      font-size: 2.1rem;
+      margin-bottom: 15px;
     }
 
-    .video-wrapper {
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+    .community p {
+      opacity: 0.9;
+      line-height: 1.6;
+      margin-bottom: 25px;
     }
 
     /* CARDS */
@@ -111,7 +82,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
-      margin-top: 50px;
     }
 
     .card {
@@ -120,24 +90,22 @@
       padding: 30px 25px;
       text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      transition: transform 0.4s ease;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 20px 45px rgba(0,0,0,0.7);
+      transform: translateY(-8px);
     }
 
-    .card h2 {
-      font-size: 1.9rem;
-      margin-bottom: 15px;
+    .card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
     }
 
     .card p {
-      font-size: 1rem;
+      opacity: 0.9;
       line-height: 1.5;
       margin-bottom: 25px;
-      opacity: 0.9;
     }
 
     .btn {
@@ -147,68 +115,22 @@
       text-decoration: none;
       font-weight: 700;
       color: #fff;
-      font-size: 1rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
-      transform: scale(1.1);
+      transform: scale(1.08);
       filter: brightness(1.15);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
     }
 
     .youtube { background: #ef4444; }
     .discord { background: #5865f2; }
 
-    /* CTA FINAL */
-    .final-cta {
-      margin: 70px 0 40px;
-      text-align: center;
-    }
-
-    .final-cta h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-
-    .final-cta p {
-      margin-bottom: 20px;
-      opacity: 0.9;
-    }
-
     footer {
       margin-top: auto;
       padding: 20px;
       font-size: 0.9rem;
-      opacity: 0.7;
-    }
-
-    /* CTA MOBILE */
-    .mobile-cta {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1.05rem; }
-      header img { width: 150px; }
-
-      .mobile-cta {
-        display: block;
-        position: fixed;
-        bottom: 15px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #ef4444;
-        padding: 14px 28px;
-        border-radius: 40px;
-        font-weight: bold;
-        color: #fff;
-        text-decoration: none;
-        z-index: 999;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      }
+      opacity: 0.6;
     }
 
     @keyframes fadeIn {
@@ -218,75 +140,59 @@
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 480px) {
+      header h1 { font-size: 2.1rem; }
+      header p { font-size: 1rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="logo.png" alt="Logo LiveComOsAmigos" />
+    <img src="logo.png" alt="LiveComOsAmigos" />
     <h1>LiveComOsAmigos</h1>
-    <p>Lives AO VIVO, games e muita resenha com a galera 🎮🔥</p>
-
-    <a class="btn youtube hero-btn"
-       href="https://www.youtube.com/@LiveComOsAmigos?sub_confirmation=1"
-       target="_blank">
-       🔔 INSCREVER-SE NO CANAL
-    </a>
-
-    <div class="social-proof">
-      🔥 Comunidade gamer crescendo todos os dias
-    </div>
+    <p>
+      Um espaço pra jogar, trocar ideia e se divertir ao vivo com a galera.
+    </p>
   </header>
 
   <main>
 
-    <!-- CONHEÇA O CANAL -->
-    <section class="video-section">
-      <h2>🎥 Conheça o canal</h2>
-      <div class="video-wrapper">
-        <iframe 
-          src="https://www.youtube.com/embed/Q_-CARIAfns?rel=0"
-          title="LiveComOsAmigos - Conheça o canal"
-          frameborder="0"
-          allowfullscreen>
-        </iframe>
-      </div>
+    <section class="community">
+      <h2>🎮 Mais que lives, uma comunidade</h2>
+      <p>
+        Aqui a ideia é simples: jogar junto, rir, conversar e criar momentos
+        bons com quem curte games e resenha.
+      </p>
     </section>
 
-    <!-- CARDS -->
     <section class="cards">
       <div class="card">
-        <h2>YouTube</h2>
-        <p>Lives ao vivo, gameplay e momentos épicos com a comunidade.</p>
+        <h3>YouTube</h3>
+        <p>
+          Acompanhe as lives e vídeos quando quiser, sem compromisso.
+        </p>
         <a class="btn youtube"
-           href="https://www.youtube.com/@LiveComOsAmigos?sub_confirmation=1"
+           href="https://www.youtube.com/@LiveComOsAmigos"
            target="_blank">
-           🔔 Inscrever-se agora
+          Ver o canal
         </a>
       </div>
 
       <div class="card">
-        <h2>Discord</h2>
-        <p>Entre no nosso Discord para jogar, trocar ideia e não perder nenhuma live.</p>
+        <h3>Discord</h3>
+        <p>
+          O lugar pra jogar junto, conversar e ficar por dentro de tudo.
+        </p>
         <a class="btn discord"
            href="https://discord.gg/K8D59QQnjn"
            target="_blank">
-           Entrar no Discord
+          Entrar no Discord
         </a>
       </div>
-    </section>
-
-    <!-- CTA FINAL -->
-    <section class="final-cta">
-      <h2>🚀 Bora fazer parte?</h2>
-      <p>Se inscreve no canal e cola nas próximas lives!</p>
-      <a class="btn youtube"
-         href="https://www.youtube.com/@LiveComOsAmigos?sub_confirmation=1"
-         target="_blank">
-         Quero me inscrever 🔥
-      </a>
     </section>
 
   </main>
@@ -294,16 +200,6 @@
   <footer>
     © 2025 • LiveComOsAmigos
   </footer>
-
-  <!-- CTA MOBILE -->
-  <a class="mobile-cta"
-     href="https://www.youtube.com/@LiveComOsAmigos?sub_confirmation=1"
-     target="_blank">
-     🔔 Inscrever-se
-  </a>
-
-  <!-- MARCA D'ÁGUA -->
-  <div class="watermark">Criado por zeus-portable (Lucas)</div>
 
 </body>
 </html>
