@@ -27,7 +27,7 @@
 
     header {
       text-align: center;
-      padding: 70px 20px 50px;
+      padding: 70px 20px 40px;
       animation: fadeIn 1.2s ease;
     }
 
@@ -56,7 +56,39 @@
       padding: 20px;
     }
 
-    /* DESTAQUE COMUNIDADE */
+    /* VÍDEO */
+    .video-section {
+      margin: 50px 0;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .video-section p {
+      opacity: 0.85;
+      margin-bottom: 25px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* COMUNIDADE */
     .community {
       background: rgba(15, 23, 42, 0.75);
       border-radius: 22px;
@@ -74,7 +106,6 @@
     .community p {
       opacity: 0.9;
       line-height: 1.6;
-      margin-bottom: 25px;
     }
 
     /* CARDS */
@@ -161,6 +192,22 @@
 
   <main>
 
+    <!-- VÍDEO APRESENTAÇÃO -->
+    <section class="video-section">
+      <h2>🎥 Conheça o canal</h2>
+      <p>Um pouco da vibe das lives e da comunidade</p>
+
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/Q_-CARIAfns?rel=0"
+          title="LiveComOsAmigos"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- COMUNIDADE -->
     <section class="community">
       <h2>🎮 Mais que lives, uma comunidade</h2>
       <p>
@@ -169,12 +216,11 @@
       </p>
     </section>
 
+    <!-- CARDS -->
     <section class="cards">
       <div class="card">
         <h3>YouTube</h3>
-        <p>
-          Acompanhe as lives e vídeos quando quiser, sem compromisso.
-        </p>
+        <p>Acompanhe as lives e vídeos quando quiser.</p>
         <a class="btn youtube"
            href="https://www.youtube.com/@LiveComOsAmigos"
            target="_blank">
@@ -184,9 +230,7 @@
 
       <div class="card">
         <h3>Discord</h3>
-        <p>
-          O lugar pra jogar junto, conversar e ficar por dentro de tudo.
-        </p>
+        <p>O lugar pra jogar junto, conversar e ficar por dentro de tudo.</p>
         <a class="btn discord"
            href="https://discord.gg/K8D59QQnjn"
            target="_blank">
