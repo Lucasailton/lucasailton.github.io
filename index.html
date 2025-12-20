@@ -12,7 +12,11 @@
   <link rel="icon" href="logo.png" />
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       min-height: 100vh;
@@ -34,12 +38,12 @@
     header img {
       width: 170px;
       margin-bottom: 20px;
-      filter: drop-shadow(0 0 15px rgba(45,212,191,0.6));
+      filter: drop-shadow(0 0 18px rgba(45,212,191,0.7));
       animation: float 4s ease-in-out infinite;
     }
 
     header h1 {
-      font-size: 2.6rem;
+      font-size: 2.7rem;
       margin-bottom: 12px;
     }
 
@@ -56,14 +60,14 @@
       padding: 20px;
     }
 
-    /* VÍDEO */
+    /* VIDEO */
     .video-section {
       margin: 50px 0;
       text-align: center;
     }
 
     .video-section h2 {
-      font-size: 2rem;
+      font-size: 2.1rem;
       margin-bottom: 15px;
     }
 
@@ -75,9 +79,10 @@
     .video-wrapper {
       position: relative;
       padding-top: 56.25%;
-      border-radius: 22px;
+      border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+      border: 2px solid rgba(45,212,191,0.35);
+      box-shadow: 0 0 35px rgba(45,212,191,0.35);
     }
 
     .video-wrapper iframe {
@@ -89,16 +94,18 @@
 
     /* COMUNIDADE */
     .community {
-      background: rgba(15, 23, 42, 0.75);
-      border-radius: 22px;
-      padding: 40px 30px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 45px 30px;
       text-align: center;
       margin-bottom: 50px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
     .community h2 {
-      font-size: 2.1rem;
+      font-size: 2.2rem;
       margin-bottom: 15px;
     }
 
@@ -115,20 +122,23 @@
     }
 
     .card {
-      background: rgba(15, 23, 42, 0.85);
-      border-radius: 20px;
-      padding: 30px 25px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 35px 25px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-      transition: transform 0.4s ease;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(45,212,191,0.25);
     }
 
     .card h3 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       margin-bottom: 12px;
     }
 
@@ -138,14 +148,35 @@
       margin-bottom: 25px;
     }
 
+    /* BOTÕES */
     .btn {
       display: inline-block;
-      padding: 14px 32px;
+      padding: 14px 34px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 700;
       color: #fff;
-      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.45),
+        transparent
+      );
+      transform: translateX(-100%);
+      transition: transform 0.6s;
+    }
+
+    .btn:hover::after {
+      transform: translateX(100%);
     }
 
     .btn:hover {
@@ -153,39 +184,39 @@
       filter: brightness(1.15);
     }
 
-    .youtube { background: #ef4444; }
-    .discord { background: #5865f2; }
+    .youtube {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+    }
 
+    .discord {
+      background: linear-gradient(135deg, #5865f2, #4f46e5);
+    }
+
+    /* FOOTER */
     footer {
       margin-top: auto;
-      padding: 20px;
+      padding: 25px;
       font-size: 0.9rem;
-      opacity: 0.7;
+      opacity: 0.75;
       text-align: center;
     }
 
-    /* CRÉDITO ANIMADO */
     footer .dev {
       display: inline-block;
-      margin-top: 6px;
+      margin-top: 8px;
       font-size: 0.8rem;
-      opacity: 0.6;
       animation: creditPulse 3s ease-in-out infinite;
     }
 
+    footer .dev strong {
+      color: #2dd4bf;
+    }
+
+    /* ANIMAÇÕES */
     @keyframes creditPulse {
-      0% {
-        opacity: 0.4;
-        transform: translateY(0);
-      }
-      50% {
-        opacity: 0.85;
-        transform: translateY(-4px);
-      }
-      100% {
-        opacity: 0.4;
-        transform: translateY(0);
-      }
+      0% { opacity: 0.4; transform: translateY(0); }
+      50% { opacity: 0.9; transform: translateY(-4px); }
+      100% { opacity: 0.4; transform: translateY(0); }
     }
 
     @keyframes fadeIn {
@@ -195,19 +226,20 @@
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-12px); }
     }
 
     @media (max-width: 480px) {
-      header h1 { font-size: 2.1rem; }
+      header h1 { font-size: 2.2rem; }
       header p { font-size: 1rem; }
     }
   </style>
 </head>
+
 <body>
 
   <header>
-    <img src="logo.png" alt="LiveComOsAmigos" />
+    <img src="logo.png" alt="LiveComOsAmigos">
     <h1>LiveComOsAmigos</h1>
     <p>Um espaço pra jogar, trocar ideia e se divertir ao vivo com a galera.</p>
   </header>
@@ -262,7 +294,7 @@
 
   <footer>
     © 2025 • LiveComOsAmigos <br>
-    <span class="dev">Desenvolvido por Zeus-portable (Lucas)</span>
+    <span class="dev">⚡ Criado por <strong>Zeus-portable</strong> (Lucas)</span>
   </footer>
 
 </body>
