@@ -7,6 +7,14 @@
 
   <!-- SEO -->
   <meta name="description" content="LiveComOsAmigos - Lives, games e diversão com a galera">
+  <meta name="keywords" content="LiveComOsAmigos, lives, games, comunidade gamer, youtube gamer">
+  <meta name="author" content="LiveComOsAmigos">
+
+  <!-- Social -->
+  <meta property="og:title" content="LiveComOsAmigos">
+  <meta property="og:description" content="Lives, games e diversão com a galera">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:type" content="website">
 
   <!-- Favicon -->
   <link rel="icon" href="logo.png" />
@@ -30,9 +38,23 @@
     }
 
     header {
+      position: relative;
       text-align: center;
       padding: 70px 20px 40px;
       animation: fadeIn 1.2s ease;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(45,212,191,0.35), transparent 70%);
+      filter: blur(40px);
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
     }
 
     header img {
@@ -48,10 +70,24 @@
     }
 
     header p {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       opacity: 0.9;
       max-width: 600px;
       margin: 0 auto;
+    }
+
+    /* BANNER */
+    .banner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 30px auto 60px;
+      padding: 0 20px;
+    }
+
+    .banner img {
+      width: 100%;
+      border-radius: 26px;
+      box-shadow: 0 0 40px rgba(45,212,191,0.35);
     }
 
     main {
@@ -60,7 +96,6 @@
       padding: 20px;
     }
 
-    /* VIDEO */
     .video-section {
       margin: 50px 0;
       text-align: center;
@@ -92,7 +127,6 @@
       height: 100%;
     }
 
-    /* COMUNIDADE */
     .community {
       background: rgba(15, 23, 42, 0.6);
       backdrop-filter: blur(12px);
@@ -104,17 +138,6 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
-    .community h2 {
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
-
-    .community p {
-      opacity: 0.9;
-      line-height: 1.6;
-    }
-
-    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -137,18 +160,6 @@
       box-shadow: 0 25px 50px rgba(45,212,191,0.25);
     }
 
-    .card h3 {
-      font-size: 1.9rem;
-      margin-bottom: 12px;
-    }
-
-    .card p {
-      opacity: 0.9;
-      line-height: 1.5;
-      margin-bottom: 25px;
-    }
-
-    /* BOTÕES */
     .btn {
       display: inline-block;
       padding: 14px 34px;
@@ -156,32 +167,11 @@
       text-decoration: none;
       font-weight: 700;
       color: #fff;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-    .btn::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.45),
-        transparent
-      );
-      transform: translateX(-100%);
-      transition: transform 0.6s;
-    }
-
-    .btn:hover::after {
-      transform: translateX(100%);
+      transition: transform 0.3s ease;
     }
 
     .btn:hover {
       transform: scale(1.08);
-      filter: brightness(1.15);
     }
 
     .youtube {
@@ -192,7 +182,6 @@
       background: linear-gradient(135deg, #5865f2, #4f46e5);
     }
 
-    /* FOOTER */
     footer {
       margin-top: auto;
       padding: 25px;
@@ -201,37 +190,14 @@
       text-align: center;
     }
 
-    footer .dev {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 0.8rem;
-      animation: creditPulse 3s ease-in-out infinite;
-    }
-
-    footer .dev strong {
-      color: #2dd4bf;
-    }
-
-    /* ANIMAÇÕES */
-    @keyframes creditPulse {
-      0% { opacity: 0.4; transform: translateY(0); }
-      50% { opacity: 0.9; transform: translateY(-4px); }
-      100% { opacity: 0.4; transform: translateY(0); }
-    }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
+      0%,100% { transform: translateY(0); }
       50% { transform: translateY(-12px); }
-    }
-
-    @media (max-width: 480px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -241,20 +207,22 @@
   <header>
     <img src="logo.png" alt="LiveComOsAmigos">
     <h1>LiveComOsAmigos</h1>
-    <p>Um espaço pra jogar, trocar ideia e se divertir ao vivo com a galera.</p>
+    <p>Lives ao vivo, games, resenha e uma comunidade pra jogar junto.</p>
   </header>
+
+  <section class="banner">
+    <img src="banner.png" alt="Banner LiveComOsAmigos">
+  </section>
 
   <main>
 
     <section class="video-section">
       <h2>🎥 Conheça o canal</h2>
-      <p>Um pouco da vibe das lives e da comunidade</p>
-
       <div class="video-wrapper">
         <iframe
+          loading="lazy"
           src="https://www.youtube.com/embed/Q_-CARIAfns?rel=0"
           title="LiveComOsAmigos"
-          frameborder="0"
           allowfullscreen>
         </iframe>
       </div>
@@ -262,29 +230,20 @@
 
     <section class="community">
       <h2>🎮 Mais que lives, uma comunidade</h2>
-      <p>
-        Aqui a ideia é simples: jogar junto, rir, conversar e criar momentos
-        bons com quem curte games e resenha.
-      </p>
+      <p>Aqui a ideia é jogar junto, rir e criar bons momentos.</p>
     </section>
 
     <section class="cards">
       <div class="card">
         <h3>YouTube</h3>
-        <p>Acompanhe as lives e vídeos quando quiser.</p>
-        <a class="btn youtube"
-           href="https://www.youtube.com/@LiveComOsAmigos"
-           target="_blank">
+        <a class="btn youtube" href="https://www.youtube.com/@LiveComOsAmigos" target="_blank">
           Ver o canal
         </a>
       </div>
 
       <div class="card">
         <h3>Discord</h3>
-        <p>O lugar pra jogar junto, conversar e ficar por dentro de tudo.</p>
-        <a class="btn discord"
-           href="https://discord.gg/K8D59QQnjn"
-           target="_blank">
+        <a class="btn discord" href="https://discord.gg/K8D59QQnjn" target="_blank">
           Entrar no Discord
         </a>
       </div>
@@ -293,8 +252,7 @@
   </main>
 
   <footer>
-    © 2025 • LiveComOsAmigos <br>
-    <span class="dev">⚡ Criado por <strong>Zeus-portable</strong> (Lucas)</span>
+    © 2025 • LiveComOsAmigos
   </footer>
 
 </body>
