@@ -13,18 +13,14 @@
   <!-- Social -->
   <meta property="og:title" content="LiveComOsAmigos">
   <meta property="og:description" content="Lives, games e diversão com a galera">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:image" content="Logo.png">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" href="logo.png" />
+  <link rel="icon" href="Logo.png" />
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
@@ -37,7 +33,6 @@
       overflow-x: hidden;
     }
 
-    /* HEADER */
     header {
       position: relative;
       text-align: center;
@@ -65,34 +60,17 @@
       animation: float 4s ease-in-out infinite;
     }
 
-    header h1 {
-      font-size: 2.7rem;
-      margin-bottom: 12px;
-    }
+    header h1 { font-size: 2.7rem; margin-bottom: 12px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    main { width: 100%; max-width: 900px; padding: 20px; }
 
-    main {
-      width: 100%;
-      max-width: 900px;
-      padding: 20px;
-    }
-
-    /* VIDEO */
     .video-section {
       margin: 50px 0;
       text-align: center;
     }
 
-    .video-section h2 {
-      font-size: 2.1rem;
-      margin-bottom: 15px;
-    }
+    .video-section h2 { font-size: 2.1rem; margin-bottom: 15px; }
 
     .video-wrapper {
       position: relative;
@@ -110,7 +88,6 @@
       height: 100%;
     }
 
-    /* COMMUNITY */
     .community {
       background: rgba(15, 23, 42, 0.6);
       backdrop-filter: blur(12px);
@@ -122,7 +99,6 @@
       box-shadow: 0 20px 40px rgba(0,0,0,0.5);
     }
 
-    /* CARDS */
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -145,7 +121,6 @@
       box-shadow: 0 25px 50px rgba(45,212,191,0.25);
     }
 
-    /* BUTTONS */
     .btn {
       display: inline-block;
       padding: 14px 34px;
@@ -156,19 +131,10 @@
       transition: transform 0.3s ease;
     }
 
-    .btn:hover {
-      transform: scale(1.08);
-    }
+    .btn:hover { transform: scale(1.08); }
+    .youtube { background: linear-gradient(135deg, #ef4444, #dc2626); }
+    .discord { background: linear-gradient(135deg, #5865f2, #4f46e5); }
 
-    .youtube {
-      background: linear-gradient(135deg, #ef4444, #dc2626);
-    }
-
-    .discord {
-      background: linear-gradient(135deg, #5865f2, #4f46e5);
-    }
-
-    /* FOOTER */
     footer {
       margin-top: auto;
       padding: 25px;
@@ -184,33 +150,18 @@
       animation: creditPulse 3s ease-in-out infinite;
     }
 
-    footer .dev strong {
-      color: #2dd4bf;
-    }
+    footer .dev strong { color: #2dd4bf; }
 
-    /* ANIMAÇÕES */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-
-    @keyframes creditPulse {
-      0% { opacity: 0.4; transform: translateY(0); }
-      50% { opacity: 0.9; transform: translateY(-4px); }
-      100% { opacity: 0.4; transform: translateY(0); }
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes creditPulse { 0% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(-4px); } 100% { opacity: 0.4; transform: translateY(0); } }
   </style>
 </head>
 
 <body>
 
   <header>
-    <img src="logo.png" alt="LiveComOsAmigos">
+    <img src="Logo.png" alt="LiveComOsAmigos">
     <h1>LiveComOsAmigos</h1>
     <p>Lives ao vivo, games, resenha e uma comunidade pra jogar junto.</p>
   </header>
