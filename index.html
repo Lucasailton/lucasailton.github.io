@@ -54,10 +54,14 @@
     }
 
     header img {
-      width: 170px;
+      width: 200px; /* aumentado */
+      height: 200px; /* mantém proporção circular */
       margin-bottom: 20px;
       filter: drop-shadow(0 0 18px rgba(45,212,191,0.7));
+      border-radius: 50%; /* circular */
       animation: float 4s ease-in-out infinite;
+      object-fit: cover; /* garante preenchimento */
+      border: 3px solid rgba(45,212,191,0.5); /* contorno opcional */
     }
 
     header h1 { font-size: 2.7rem; margin-bottom: 12px; }
