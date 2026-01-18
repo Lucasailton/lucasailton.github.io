@@ -54,14 +54,14 @@
     }
 
     header img {
-      width: 200px; /* aumentado */
-      height: 200px; /* mantém proporção circular */
+      width: 200px;
+      height: 200px;
       margin-bottom: 20px;
       filter: drop-shadow(0 0 18px rgba(45,212,191,0.7));
-      border-radius: 50%; /* circular */
+      border-radius: 50%;
       animation: float 4s ease-in-out infinite;
-      object-fit: cover; /* garante preenchimento */
-      border: 3px solid rgba(45,212,191,0.5); /* contorno opcional */
+      object-fit: cover;
+      border: 3px solid rgba(45,212,191,0.5);
     }
 
     header h1 { font-size: 2.7rem; margin-bottom: 12px; }
@@ -107,6 +107,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 25px;
+      margin-bottom: 50px;
     }
 
     .card {
@@ -139,6 +140,64 @@
     .youtube { background: linear-gradient(135deg, #ef4444, #dc2626); }
     .discord { background: linear-gradient(135deg, #5865f2, #4f46e5); }
 
+    /* ===== PARCEIRO OFICIAL ===== */
+
+    .partner {
+      margin: 60px 0;
+      text-align: center;
+    }
+
+    .partner h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .partner p {
+      opacity: 0.85;
+      margin-bottom: 30px;
+    }
+
+    .partner-card {
+      max-width: 380px;
+      margin: 0 auto;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 35px 25px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.5);
+      position: relative;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .partner-card img {
+      width: 110px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 0 12px rgba(45,212,191,0.6));
+    }
+
+    .partner-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 6px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 20px;
+      color: #0f172a;
+      background: linear-gradient(135deg, #2dd4bf, #22c55e);
+      animation: badgeGlow 2.5s ease-in-out infinite;
+    }
+
+    .partner-btn {
+      background: linear-gradient(135deg, #2dd4bf, #0ea5e9);
+      margin-top: 10px;
+    }
+
     footer {
       margin-top: auto;
       padding: 25px;
@@ -156,9 +215,27 @@
 
     footer .dev strong { color: #2dd4bf; }
 
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-    @keyframes creditPulse { 0% { opacity: 0.4; transform: translateY(0); } 50% { opacity: 0.9; transform: translateY(-4px); } 100% { opacity: 0.4; transform: translateY(0); } }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    @keyframes creditPulse {
+      0% { opacity: 0.4; transform: translateY(0); }
+      50% { opacity: 0.9; transform: translateY(-4px); }
+      100% { opacity: 0.4; transform: translateY(0); }
+    }
+
+    @keyframes badgeGlow {
+      0% { box-shadow: 0 0 0 rgba(45,212,191,0.2); }
+      50% { box-shadow: 0 0 18px rgba(45,212,191,0.7); }
+      100% { box-shadow: 0 0 0 rgba(45,212,191,0.2); }
+    }
   </style>
 </head>
 
@@ -175,8 +252,7 @@
     <section class="video-section">
       <h2>🎥 Conheça o canal</h2>
       <div class="video-wrapper">
-        <iframe
-          loading="lazy"
+        <iframe loading="lazy"
           src="https://www.youtube.com/embed/Q_-CARIAfns?rel=0"
           title="LiveComOsAmigos"
           allowfullscreen>
@@ -201,6 +277,22 @@
         <h3>Discord</h3>
         <a class="btn discord" href="https://discord.gg/K8D59QQnjn" target="_blank">
           Entrar no Discord
+        </a>
+      </div>
+    </section>
+
+    <!-- PARCEIRO OFICIAL -->
+    <section class="partner">
+      <h2>🤝 Loja Parceira Oficial</h2>
+      <p>Apoiando o canal com produtos e serviços de qualidade para a comunidade gamer.</p>
+
+      <div class="partner-card">
+        <img src="pixelstore.png" alt="Pixel Store">
+        <h3>Pixel Store</h3>
+        <span class="badge">Parceiro Oficial</span>
+
+        <a class="btn partner-btn" href="https://discord.gg/vhy58ZfruS" target="_blank">
+          Acessar a Loja
         </a>
       </div>
     </section>
