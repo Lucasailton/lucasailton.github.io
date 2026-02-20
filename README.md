@@ -1,1 +1,1 @@
-
+No desenvolvimento do nosso projeto, utilizamos uma abordagem colaborativa para organização e acompanhamento das demandas. Todas as issues relacionadas às funcionalidades, correções e melhorias estão documentadas no repositório do GitHub, facilitando a gestão das tarefas e a comunicação entre os membros da equipe. Acesse e acompanhe as atividades em andamento por meio do seguinte link: https://github.com/NelsonLuisModenezJunior/squad-heny-pi/issues
