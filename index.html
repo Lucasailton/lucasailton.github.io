@@ -19,224 +19,8 @@
   <!-- Favicon -->
   <link rel="icon" href="Logo.png" />
 
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      min-height: 100vh;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: radial-gradient(circle at top, #2dd4bf, #0f172a 65%);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: hidden;
-    }
-
-    header {
-      position: relative;
-      text-align: center;
-      padding: 70px 20px 50px;
-      animation: fadeIn 1.2s ease;
-    }
-
-    header::before {
-      content: "";
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      background: radial-gradient(circle, rgba(45,212,191,0.35), transparent 70%);
-      filter: blur(40px);
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: -1;
-    }
-
-    header img {
-      width: 200px;
-      height: 200px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 18px rgba(45,212,191,0.7));
-      border-radius: 50%;
-      animation: float 4s ease-in-out infinite;
-      object-fit: cover;
-      border: 3px solid rgba(45,212,191,0.5);
-    }
-
-    header h1 { font-size: 2.7rem; margin-bottom: 12px; }
-    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-
-    main { width: 100%; max-width: 900px; padding: 20px; }
-
-    .video-section {
-      margin: 50px 0;
-      text-align: center;
-    }
-
-    .video-section h2 { font-size: 2.1rem; margin-bottom: 15px; }
-
-    .video-wrapper {
-      position: relative;
-      padding-top: 56.25%;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 2px solid rgba(45,212,191,0.35);
-      box-shadow: 0 0 35px rgba(45,212,191,0.35);
-    }
-
-    .video-wrapper iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    .community {
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 45px 30px;
-      text-align: center;
-      margin-bottom: 50px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-bottom: 50px;
-    }
-
-    .card {
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 35px 25px;
-      text-align: center;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.02);
-      box-shadow: 0 25px 50px rgba(45,212,191,0.25);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 34px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 700;
-      color: #fff;
-      transition: transform 0.3s ease;
-    }
-
-    .btn:hover { transform: scale(1.08); }
-    .youtube { background: linear-gradient(135deg, #ef4444, #dc2626); }
-    .discord { background: linear-gradient(135deg, #5865f2, #4f46e5); }
-
-    /* ===== PARCEIRO OFICIAL ===== */
-
-    .partner {
-      margin: 60px 0;
-      text-align: center;
-    }
-
-    .partner h2 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-
-    .partner p {
-      opacity: 0.85;
-      margin-bottom: 30px;
-    }
-
-    .partner-card {
-      max-width: 380px;
-      margin: 0 auto;
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      padding: 35px 25px;
-      box-shadow: 0 20px 45px rgba(0,0,0,0.5);
-      position: relative;
-      animation: fadeIn 1.2s ease;
-    }
-
-    .partner-card img {
-      width: 110px;
-      margin-bottom: 15px;
-      filter: drop-shadow(0 0 12px rgba(45,212,191,0.6));
-    }
-
-    .partner-card h3 {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 6px 14px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      border-radius: 20px;
-      color: #0f172a;
-      background: linear-gradient(135deg, #2dd4bf, #22c55e);
-      animation: badgeGlow 2.5s ease-in-out infinite;
-    }
-
-    .partner-btn {
-      background: linear-gradient(135deg, #2dd4bf, #0ea5e9);
-      margin-top: 10px;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 25px;
-      font-size: 0.9rem;
-      opacity: 0.75;
-      text-align: center;
-    }
-
-    footer .dev {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: 0.8rem;
-      animation: creditPulse 3s ease-in-out infinite;
-    }
-
-    footer .dev strong { color: #2dd4bf; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes float {
-      0%,100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-
-    @keyframes creditPulse {
-      0% { opacity: 0.4; transform: translateY(0); }
-      50% { opacity: 0.9; transform: translateY(-4px); }
-      100% { opacity: 0.4; transform: translateY(0); }
-    }
-
-    @keyframes badgeGlow {
-      0% { box-shadow: 0 0 0 rgba(45,212,191,0.2); }
-      50% { box-shadow: 0 0 18px rgba(45,212,191,0.7); }
-      100% { box-shadow: 0 0 0 rgba(45,212,191,0.2); }
-    }
-  </style>
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -252,7 +36,8 @@
     <section class="video-section">
       <h2>🎥 Conheça o canal</h2>
       <div class="video-wrapper">
-        <iframe loading="lazy"
+        <iframe
+          loading="lazy"
           src="https://www.youtube.com/embed/Q_-CARIAfns?rel=0"
           title="LiveComOsAmigos"
           allowfullscreen>
@@ -281,21 +66,18 @@
       </div>
     </section>
 
-    <!-- PARCEIRO OFICIAL -->
-    <section class="partner">
-      <h2>🤝 Loja Parceira Oficial</h2>
-      <p>Apoiando o canal com produtos e serviços de qualidade para a comunidade gamer.</p>
-
-      <div class="partner-card">
-        <img src="pixelstore.png" alt="Pixel Store">
-        <h3>Pixel Store</h3>
-        <span class="badge">Parceiro Oficial</span>
-
-        <a class="btn partner-btn" href="https://discord.gg/vhy58ZfruS" target="_blank">
-          Acessar a Loja
-        </a>
-      </div>
-    </section>
+    <!-- Dock estilo MacOS com links -->
+    <div class="dock">
+      <a href="https://github.com/Lucasailton" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+      </a>
+      <a href="https://www.youtube.com/@LiveComOsAmigos" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      </a>
+      <a href="https://discord.gg/K8D59QQnjn" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Discord">
+      </a>
+    </div>
 
   </main>
 
@@ -304,5 +86,7 @@
     <span class="dev">⚡ Criado por <strong>Zeus-portable</strong> (Lucas)</span>
   </footer>
 
+  <!-- JS externo -->
+  <script src="script.js"></script>
 </body>
 </html>
