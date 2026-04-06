@@ -5,88 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>LiveComOsAmigos</title>
 
-  <!-- SEO -->
+  <!-- SEO e Social -->
   <meta name="description" content="LiveComOsAmigos - Lives, games e diversão com a galera">
-  <meta name="keywords" content="LiveComOsAmigos, lives, games, comunidade gamer, youtube gamer">
-  <meta name="author" content="LiveComOsAmigos">
-
-  <!-- Social -->
-  <meta property="og:title" content="LiveComOsAmigos">
-  <meta property="og:description" content="Lives, games e diversão com a galera">
-  <meta property="og:image" content="Logo.png">
-  <meta property="og:type" content="website">
-
-  <!-- Favicon -->
   <link rel="icon" href="Logo.png" />
-
-  <!-- CSS externo -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <header>
-    <img src="Logo.png" alt="LiveComOsAmigos">
-    <h1>LiveComOsAmigos</h1>
-    <p>Lives ao vivo, games, resenha e uma comunidade pra jogar junto.</p>
+    <div class="header-content">
+      <!-- Se você tiver a imagem Logo.png, ela aparecerá aqui -->
+      <img src="Logo.png" alt="Logo LiveComOsAmigos" class="main-logo">
+      <h1>LiveComOsAmigos</h1>
+      <p>Lives ao vivo, games, resenha e uma comunidade pra jogar junto.</p>
+    </div>
   </header>
 
   <main>
-
+    <!-- Seção do Vídeo em Destaque -->
     <section class="video-section">
-      <h2>🎥 Conheça o canal</h2>
-      <div class="video-wrapper">
+      <div class="video-container">
         <iframe
-          loading="lazy"
-          src="https://www.youtube.com/embed/Q_-CARIAfns?rel=0"
+          src="https://youtube.com"
           title="LiveComOsAmigos"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen>
         </iframe>
       </div>
     </section>
 
-    <section class="community">
+    <!-- Texto de Chamada -->
+    <section class="community-text">
       <h2>🎮 Mais que lives, uma comunidade</h2>
       <p>Jogar junto, trocar ideia e se divertir com a galera.</p>
     </section>
 
-    <section class="cards">
+    <!-- Botões de Ação (Cards) -->
+    <section class="cards-container">
       <div class="card">
         <h3>YouTube</h3>
-        <a class="btn youtube" href="https://www.youtube.com/@LiveComOsAmigos" target="_blank">
-          Ver o canal
-        </a>
+        <a href="https://youtube.com" target="_blank" class="btn youtube">Ver o canal</a>
       </div>
 
       <div class="card">
         <h3>Discord</h3>
-        <a class="btn discord" href="https://discord.gg/K8D59QQnjn" target="_blank">
-          Entrar no Discord
-        </a>
+        <a href="https://discord.gg" target="_blank" class="btn discord">Entrar no Discord</a>
       </div>
     </section>
 
-    <!-- Dock estilo MacOS com links -->
-    <div class="dock">
-      <a href="https://github.com/Lucasailton" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
-      </a>
-      <a href="https://www.youtube.com/@LiveComOsAmigos" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
-      </a>
-      <a href="https://discord.gg/K8D59QQnjn" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Discord">
-      </a>
-    </div>
+    <!-- Dock estilo MacOS com links (Discord no lugar do Spotify) -->
+    <nav class="dock">
+      <div class="dock-container">
+        <a href="https://github.com" target="_blank" title="GitHub">
+          <img src="https://flaticon.com" alt="GitHub">
+        </a>
+        <a href="https://youtube.com" target="_blank" title="YouTube">
+          <img src="https://flaticon.com" alt="YouTube">
+        </a>
+        <!-- Ícone do Discord atualizado -->
+        <a href="https://discord.gg" target="_blank" title="Discord">
+          <img src="https://flaticon.com" alt="Discord">
+        </a>
+      </div>
+    </nav>
 
   </main>
 
   <footer>
-    © 2025 • LiveComOsAmigos <br>
+    <p>© 2025 • LiveComOsAmigos</p>
     <span class="dev">⚡ Criado por <strong>Zeus-portable</strong> (Lucas)</span>
   </footer>
 
-  <!-- JS externo -->
-  <script src="script.js"></script>
 </body>
 </html>
