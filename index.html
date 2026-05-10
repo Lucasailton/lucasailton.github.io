@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LiveComOsAmigos</title>
+
+  <meta name="description" content="LiveComOsAmigos - Lives, games e diversão com a galera">
+  <meta name="keywords" content="LiveComOsAmigos, lives, games, comunidade gamer, youtube gamer">
+  <meta name="author" content="LiveComOsAmigos">
+
+  <meta property="og:title" content="LiveComOsAmigos">
+  <meta property="og:description" content="Lives, games e diversão com a galera">
+  <meta property="og:image" content="Logo.png">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="Logo.png" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+
+<body>
+
+  <header>
+    <img src="Logo.png" alt="LiveComOsAmigos">
+    <h1>LiveComOsAmigos</h1>
+    <p>Lives ao vivo, games, resenha e uma comunidade pra jogar junto.</p>
+  </header>
+
+  <main>
+
+    <section class="video-section">
+      <h2>🎥 Conheça o canal</h2>
+      <div class="video-wrapper">
+        <iframe
+          loading="lazy"
+          src="https://www.youtube.com/embed/Q_-CARIAfns?rel=0"
+          title="LiveComOsAmigos"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="community">
+      <h2>🎮 Mais que lives, uma comunidade</h2>
+      <p>Jogar junto, trocar ideia e se divertir com a galera.</p>
+    </section>
+
+    <section class="cards">
+      <div class="card">
+        <h3>YouTube</h3>
+        <a class="btn youtube" href="https://www.youtube.com/@LiveComOsAmigos" target="_blank">
+          Ver o canal
+        </a>
+      </div>
+      <div class="card">
+        <h3>Discord</h3>
+        <a class="btn discord" href="https://discord.gg/K8D59QQnjn" target="_blank">
+          Entrar no Discord
+        </a>
+      </div>
+    </section>
+
+    <!-- SORTEIO ROBLOX -->
+    <section class="sorteio-section">
+      <h2>🎰 Sorteio Roblox</h2>
+      <p class="sorteio-sub">Adicione os @ dos participantes e sorteie na hora!</p>
+
+      <div class="sorteio-container">
+        <div class="sorteio-left">
+
+          <div class="sorteio-card">
+            <div class="sorteio-card-title"><i class="ti ti-user-plus"></i> Adicionar participantes</div>
+            <div class="s-input-row">
+              <input type="text" id="single-input" placeholder="@NomeDoJogador" onkeydown="if(event.key==='Enter')addSingle()" />
+              <button class="s-btn" onclick="addSingle()"><i class="ti ti-plus"></i> Adicionar</button>
+            </div>
+            <div class="s-divider">ou cole vários de uma vez</div>
+            <textarea id="bulk-input" placeholder="@jogador1&#10;@jogador2&#10;@jogador3"></textarea>
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+              <span class="s-hint">Um @ por linha</span>
+              <button class="s-btn" onclick="addBulk()"><i class="ti ti-list-check"></i> Adicionar todos</button>
+            </div>
+          </div>
+
+          <div class="sorteio-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+              <div class="sorteio-card-title" style="margin:0"><i class="ti ti-users"></i> No sorteio <span class="s-counter" id="pool-count">(0)</span></div>
+              <button class="s-btn-clear" onclick="clearPool()">Limpar tudo</button>
+            </div>
+            <div class="s-pool" id="pool-display">
+              <span class="s-empty">Nenhum participante ainda</span>
+            </div>
+          </div>
+
+          <button class="s-btn-sort" id="btn-sort" onclick="sortear()" disabled>
+            <i class="ti ti-sparkles"></i> Sortear
+          </button>
+
+          <div class="s-result" id="result-box">
+            <span style="font-size:13px;opacity:0.5">O sorteado aparece aqui</span>
+          </div>
+
+        </div>
+
+        <div class="sorteio-right">
+          <div class="s-sidebar-title"><i class="ti ti-trophy" style="color:#f59e0b"></i> Já sorteados</div>
+          <div class="s-sorteados-list" id="sorteados-list">
+            <div class="s-empty-side">Nenhum ainda</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dock -->
+    <div class="dock">
+      <a href="https://github.com/Lucasailton" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+      </a>
+      <a href="https://www.youtube.com/@LiveComOsAmigos" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube">
+      </a>
+      <a href="https://discord.gg/K8D59QQnjn" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111624.png" alt="Discord">
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2025 • LiveComOsAmigos <br>
+    <span class="dev">⚡ Criado por <strong>Zeus-portable</strong> (Lucas)</span>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let pool = [];
+    let sorteados = [];
+
+    function norm(s) {
+      s = s.trim();
+      if (!s) return '';
+      if (!s.startsWith('@')) s = '@' + s;
+      return s;
+    }
+
+    function addSingle() {
+      const inp = document.getElementById('single-input');
+      const val = norm(inp.value);
+      if (!val) return;
+      if (!pool.includes(val)) pool.push(val);
+      inp.value = '';
+      render();
+    }
+
+    function addBulk() {
+      const ta = document.getElementById('bulk-input');
+      ta.value.split('\n').map(norm).filter(Boolean).forEach(l => {
+        if (!pool.includes(l)) pool.push(l);
+      });
+      ta.value = '';
+      render();
+    }
+
+    function removeFromPool(i) { pool.splice(i, 1); render(); }
+    function clearPool() { pool = []; render(); }
+    function removeSorteado(i) { sorteados.splice(i, 1); renderSorteados(); }
+
+    function sortear() {
+      if (!pool.length) return;
+      const idx = Math.floor(Math.random() * pool.length);
+      const chosen = pool.splice(idx, 1)[0];
+      sorteados.unshift(chosen);
+      document.getElementById('result-box').innerHTML =
+        `<span class="s-result-label">🎉 Sorteado!</span><span class="s-result-at">${chosen}</span>`;
+      render();
+    }
+
+    function render() {
+      document.getElementById('pool-count').textContent = '(' + pool.length + ')';
+      document.getElementById('btn-sort').disabled = pool.length === 0;
+      const pd = document.getElementById('pool-display');
+      pd.innerHTML = pool.length
+        ? pool.map((p, i) =>
+            `<div class="s-chip"><i class="ti ti-user" style="font-size:13px"></i>${p}
+             <button onclick="removeFromPool(${i})" title="Remover">×</button></div>`
+          ).join('')
+        : '<span class="s-empty">Nenhum participante ainda</span>';
+      renderSorteados();
+    }
+
+    function renderSorteados() {
+      const el = document.getElementById('sorteados-list');
+      el.innerHTML = sorteados.length
+        ? sorteados.map((s, i) =>
+            `<div class="s-sorteado-item">
+              <span class="s-num">#${i+1}</span>
+              <span style="flex:1;margin:0 6px;font-weight:600">${s}</span>
+              <button class="s-rm" onclick="removeSorteado(${i})" title="Remover">×</button>
+            </div>`
+          ).join('')
+        : '<div class="s-empty-side">Nenhum ainda</div>';
+    }
+  </script>
+</body>
+</html>
