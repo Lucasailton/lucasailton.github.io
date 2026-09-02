@@ -528,12 +528,12 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: var(--surface);
   border: 1px solid var(--border);
-  font-size: 1.15rem;
+  font-size: 1.6rem;
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 .dock a:hover { border-color: var(--accent); transform: translateY(-2px); }
